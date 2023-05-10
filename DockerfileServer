@@ -1,0 +1,14 @@
+from python:3
+
+WORKDIR /app
+
+COPY requirements.txt /app/requirements.txt
+
+RUN pip install -r /app/requirements.txt
+
+COPY server.py /app/server.py
+
+EXPOSE 8000
+EXPOSE 5556
+
+ENTRYPOINT ["python", "/app/server.py"]
